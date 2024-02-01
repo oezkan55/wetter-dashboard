@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wetter-Dashboard</title>
+
+    <!--? *-*-*-*-*-*-*-*-*=== Favicons ===*-*-*-*-*-*-*-*-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/img/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/img/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/img/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="src/img/favicons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="src/img/favicons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="src/img/favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta
+      name="msapplication-config"
+      content="src/img/favicons/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" src="src/js/script.js"></script>
+  </head>
+  <body class="container">
+    <main class="app">
+      <header class="header">
+        <h1 class="header__heading">Alis Wetter-Dashboard</h1>
+      </header>
+
+      <form class="search">
+        <h2 class="search__text">Geben Sie einen Stadtnamen ein</h2>
+
+        <div class="search__group">
+          <input type="text" class="search__input" placeholder="oder PLZ..." />
+          <button
+            type="button"
+            class="btn btn--location"
+            title="Aktuelle Position"
+          >
+            <svg viewBox="0 0 448 512">
+              <path
+                d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"
+              />
+            </svg>
+          </button>
+        </div>
+        <input
+          class="btn btn--search"
+          type="submit"
+          value="Suchen"
+          title="suchen"
+        />
+      </form>
+
+      <div class="current-weather">
+        <p class="current-weather__location">Selb, DE</p>
+        <p class="date">Mo. 01 Januar 2024</p>
+        <p class="current-weather__temperature">--</p>
+        <div class="current-weather__group">
+          <div class="current-weather__icon-box"></div>
+          <p class="current-weather__state">Wetter Zustand</p>
+        </div>
+        <p class="current-weather__max"><small>Höchst</small> (__)</p>
+        <p class="current-weather__min"><small>Niedrig</small> (__)</p>
+
+        <div class="loader">
+          <img src="src/img/icons/loading.svg" alt="" />
+        </div>
+      </div>
+
+      <aside class="clock">
+        <img
+          class="clock__digits"
+          src="src/img/icons/clock-template.svg"
+          alt="Uhr"
+        />
+        <div class="clock__hour"></div>
+        <div class="clock__minute"></div>
+        <div class="clock__second"></div>
+      </aside>
+
+      <div class="week-overview">
+        <div class="weather">
+          <p class="weather__day">(__)</p>
+          <div class="weather__icon-box"></div>
+          <span class="weather__range">Max.</span>
+          <span class="weather__range">Min.</span>
+        </div>
+        <div class="weather">
+          <p class="weather__day">(__)</p>
+          <div class="weather__icon-box"></div>
+          <span class="weather__range">Max.</span>
+          <span class="weather__range">Min.</span>
+        </div>
+        <div class="weather">
+          <p class="weather__day">(__)</p>
+          <div class="weather__icon-box"></div>
+          <span class="weather__range">Max.</span>
+          <span class="weather__range">Min.</span>
+        </div>
+        <div class="weather">
+          <p class="weather__day">(__)</p>
+          <div class="weather__icon-box"></div>
+          <span class="weather__range">Max.</span>
+          <span class="weather__range">Min.</span>
+        </div>
+        <div class="weather">
+          <p class="weather__day">(__)</p>
+          <div class="weather__icon-box"></div>
+          <span class="weather__range">Max.</span>
+          <span class="weather__range">Min.</span>
+        </div>
+        <div class="weather">
+          <p class="weather__day">(__)</p>
+          <div class="weather__icon-box"></div>
+          <span class="weather__range">Max.</span>
+          <span class="weather__range">Min.</span>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p class="footer__text">
+          &#10084; Entworfen & Gecodet von
+          <strong
+            ><a
+              class="footer__link"
+              href="https://github.com/oezkan55"
+              target="_blank"
+              title="Guthub Profile"
+              >Alibey</a
+            ></strong
+          >
+        </p>
+      </footer>
+    </main>
+
+    <!--?=== Damit "touch" Funktionalität auf Iphone/Mac funktioniert  ===-->
+    <script defer>
+      document.addEventListener("touchstart", function () {}, true);
+    </script>
+  </body>
+</html>

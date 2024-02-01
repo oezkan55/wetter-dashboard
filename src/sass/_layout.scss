@@ -1,0 +1,126 @@
+@use "abstracts" as *;
+
+//*?+*+*+*+====== !ANCHOR Container =====+*+*+*+*/
+.container {
+  min-height: 100vh; //* Fallback
+  min-height: 100svh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../img/bg.jpg");
+  background-size: cover;
+  background-position: top center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+//*?+*+*+*+====== !ANCHOR App =====+*+*+*+*/
+.app {
+  max-width: 120rem;
+  padding: 1.6rem;
+
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(min-content, max-content) 1fr;
+  // gap: min(0.8rem + 3vw, 4.8rem);
+  gap: min(1.2rem + 4vw, 6.4rem);
+
+  @include responsive($bp-medium) {
+    grid-template-columns: 2fr 1fr;
+    max-width: 80rem;
+  }
+
+  @include responsive($bp-small) {
+    grid-template-columns: 1fr;
+  }
+}
+
+//*?+*+*+*+====== !ANCHOR Header =====+*+*+*+*/
+.header {
+  min-height: 8.5rem;
+  background-image: linear-gradient(
+    135deg,
+    rgba($color-primary, 0.6),
+    rgba($color-primary-light, 0.9)
+  );
+  padding: 1.2rem 1.6rem;
+  transform: skewX(-16deg);
+  z-index: -1;
+
+  display: flex;
+  align-items: center;
+
+  grid-column: 1 / -1;
+
+  &__heading {
+    font-size: 3.6rem;
+    font-weight: 600;
+    transform: skewX(16deg);
+
+    @include responsive($bp-medium) {
+      // font-size: 2rem;
+      font-size: min(1.6rem + 2vw, 3rem);
+    }
+  }
+}
+
+//*?+*+*+*+====== !ANCHOR Week-Overview =====+*+*+*+*/
+.week-overview {
+  padding: 1.6rem 0;
+  scroll-snap-type: x mandatory;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.2rem;
+
+  &::-webkit-scrollbar {
+    height: 1rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($color: $color-secondary, $alpha: 0.7);
+    border-radius: 1rem;
+  }
+
+  &::-webkit-scrollbar-track:horizontal {
+    box-shadow: inset 0 0 2px 2px rgba($color-primary-light, 0.5);
+    border-radius: 1rem;
+  }
+
+  @include responsive($bp-medium) {
+    overflow-x: scroll;
+
+    gap: 4.8rem;
+    justify-content: flex-start;
+    grid-column: 1 / -1;
+  }
+}
+
+//*?+*+*+*+====== !ANCHOR Footer =====+*+*+*+*/
+.footer {
+  font-size: 1.8rem;
+  text-align: center;
+
+  grid-column: 1 / -1;
+
+  &__link:is(:link, :visited) {
+    display: inline;
+    color: $color-primary-light;
+    transition: $transition-standard;
+  }
+
+  &__link:is(:hover, :active) {
+    padding: 0.2rem 0.4rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(
+      rgba($color-primary, 0.5),
+      rgba($color-primary-light, 0.5)
+    );
+  }
+}

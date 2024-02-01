@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+.weather {
+  padding: 1.2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(3.5rem) contrast(0.5);
+  box-shadow: 0 0.8rem 3rem 0 rgba(#000, 0.2);
+  scroll-snap-align: start;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  column-gap: 1.6rem;
+
+  &:is(:hover, :active) {
+    background-color: rgba($color-primary, 0.3);
+    transform: scale(1.04);
+  }
+
+  &__day {
+    font-size: 2rem;
+    font-weight: 600;
+
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  &__icon-box {
+    width: 7rem;
+    height: 8rem;
+
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  &__icon {
+    @extend %weather-icon;
+
+    .weather:is(:hover, :active) & {
+      filter: drop-shadow(0.2rem 0.3rem 0.3rem rgba(0, 0, 0, 0.4));
+      transform: scale(1.2);
+    }
+  }
+
+  &__range {
+    font-size: 1.8rem;
+  }
+}

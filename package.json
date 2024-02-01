@@ -1,0 +1,24 @@
+{
+  "name": "wetter-app",
+  "version": "1.0.0",
+  "description": "Ausgabe aktuelles Wetter und Temperatur",
+  "default": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Alibey",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.10.3",
+    "@parcel/packager-xml": "^2.10.3",
+    "@parcel/transformer-sass": "^2.10.3",
+    "@parcel/transformer-webmanifest": "^2.10.3",
+    "@parcel/transformer-xml": "^2.10.3",
+    "parcel": "^2.10.3"
+  }
+}

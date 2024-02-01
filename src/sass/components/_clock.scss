@@ -1,0 +1,67 @@
+@use "../abstracts" as *;
+
+$-clock-radius: 50%;
+
+.clock {
+  background: #fff;
+  border-radius: $-clock-radius;
+  position: relative;
+  width: 80%;
+  aspect-ratio: 1 / 1;
+
+  justify-self: center;
+  align-self: center;
+
+  @include responsive($bp-medium) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  @include responsive($bp-small) {
+    width: 7rem;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+  }
+
+  &::before {
+    @extend %clock-before-and-after;
+    inset: 0;
+    box-shadow: inset 0 0 2.5rem rgba(0, 0, 0, 0.4);
+    transform: scale(1.07);
+    z-index: -1;
+  }
+
+  &::after {
+    @extend %clock-before-and-after;
+    left: 50%;
+    top: 50%;
+    width: 6.7%;
+    height: 6.7%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__digits {
+    object-fit: cover;
+    display: block;
+  }
+
+  &__hour {
+    @extend %clock-hand;
+    height: 20%;
+    width: 3.3%;
+  }
+
+  &__minute {
+    @extend %clock-hand;
+    height: 26.7%;
+    width: 1.7%;
+  }
+
+  &__second {
+    @extend %clock-hand;
+    height: 31%;
+    width: 1%;
+    background-color: $color-primary;
+  }
+}

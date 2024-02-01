@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.date {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+
+  @include responsive($bp-small) {
+    grid-column: 1 / -1;
+  }
+}
