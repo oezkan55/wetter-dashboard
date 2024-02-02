@@ -20,8 +20,11 @@ $-clock-radius: 50%;
   @include responsive($bp-small) {
     width: 7rem;
     position: absolute;
-    top: 3%;
-    right: 5%;
+    top: 2.3%;
+    right: 5.5%;
+
+    grid-column: initial;
+    grid-row: initial;
   }
 
   &::before {
